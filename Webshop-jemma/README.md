@@ -3,6 +3,8 @@
 Een front-end webshop voor sieraden, gebouwd met vanilla JavaScript.
 Bevat een productpagina met filtering, winkelwagenfunctionaliteit en een admin-paneel voor product en order beheer.
 
+   🔗 **Live demo:** [webshop-jemma.netlify.app](https://webshop-jemma.netlify.app)
+
 ## Features
 
 **Voor bezoekers:**
