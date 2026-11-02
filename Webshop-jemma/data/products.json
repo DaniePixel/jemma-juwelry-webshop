@@ -1,0 +1,164 @@
+[
+  {
+    "categorie": "ringen",
+    "titel": "Ring Diamant ovaal",
+    "id": 1,
+    "prijs": 558.99,
+    "stock": 8,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ringen/ring-ovaal.png"
+  },
+  {
+    "categorie": "ringen",
+    "titel": "Ring Parelmoer",
+    "prijs": 1367.99,
+    "id": 2,
+    "stock": 0,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ringen/ring-parelmoer.png"
+  },
+  {
+    "categorie": "ringen",
+    "titel": "Ring V-vorm",
+    "id": 3,
+    "prijs": 349.99,
+    "stock": 4,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ringen/ring-v-vorm.png"
+  },
+  {
+    "categorie": "ringen",
+    "titel": "Ring diamant rond",
+    "id": 4,
+    "prijs": 1129.99,
+    "stock": 3,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ringen/ring-rond.png"
+  },
+  {
+    "categorie": "oorbellen",
+    "titel": "Oorbel diamant",
+    "id": 5,
+    "prijs": 159.99,
+    "stock": 9,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/oorbel/oorbel-diamant.png"
+  },
+  {
+    "categorie": "oorbellen",
+    "titel": "Oorbel Parels",
+    "id": 6,
+    "prijs": 89.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/oorbel/oorbel-parels.png"
+  },
+  {
+    "categorie": "oorbellen",
+    "titel": "Oorbel ringen",
+    "id": 7,
+    "prijs": 139.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/oorbel/oorbel-ringen.png"
+  },
+  {
+    "categorie": "oorbellen",
+    "titel": "Oorbel vlecht",
+    "id": 8,
+    "prijs": 66.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/oorbel/oorbel-vlecht.png"
+  },
+  {
+    "categorie": "oorbellen",
+    "titel": "Oorbel Zilver diamantjes",
+    "id": 9,
+    "prijs": 149.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/oorbel/oorbel-zilver-steentjes.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting edelsteen",
+    "id": 10,
+    "prijs": 129.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-edelsteen.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting embleem",
+    "id": 11,
+    "prijs": 89.99,
+    "stock": 4,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-embleem.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting maantjes en sterren",
+    "id": 12,
+    "prijs": 119.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-maan-ster.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting parels",
+    "id": 13,
+    "prijs": 199.99,
+    "stock": 7,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-parels.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting mix",
+    "id": 14,
+    "prijs": 129.99,
+    "stock": 6,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-rondje.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting fijne schakels",
+    "id": 15,
+    "prijs": 189.99,
+    "stock": 0,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-schakel.png"
+  },
+  {
+    "categorie": "halskettingen",
+    "titel": "Ketting zilver golf embleem",
+    "id": 16,
+    "prijs": 159.99,
+    "stock": 0,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/ketting/ketting-zilver.png"
+  },
+  {
+    "categorie": "armbanden",
+    "titel": "Armband diamantjes",
+    "id": 17,
+    "prijs": 89.99,
+    "stock": 3,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/armband/armband-diamantjes.png"
+  },
+  {
+    "categorie": "armbanden",
+    "titel": "Armband glad",
+    "id": 18,
+    "prijs": 89.99,
+    "stock": 3,
+    "order": 0,
+    "afbeelding": "Afbeeldingen/armband/armband-glad.png"
+  }
+]

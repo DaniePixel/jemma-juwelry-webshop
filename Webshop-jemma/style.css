@@ -1,0 +1,529 @@
+@font-face {
+  font-family: Athena;
+  src: url(athena.ttf);
+}
+
+/* ---------- Variabelen ---------- */
+:root {
+  /* Kleuren */
+  --goud: #d9a96e;
+  --bruin: #a1681f;
+  --tekst: #887358;
+  --tekst-zacht: #8b7e6e;
+  --paars: #7b09a3;
+  --creme: #faf6ee;
+  --beige: #ede6db;
+  --licht: #f5f1ec;
+  --roze: #f4d2ef;
+  --rood: #ca0b0b;
+  --wit: #ffffff;
+
+  /* Schaduwen */
+  --schaduw: 0 8px 28px rgba(0, 0, 0, 0.25);
+  --schaduw-hover: 0 8px 9px rgba(0, 0, 0, 0.23);
+
+  /* Lettertypen */
+  --font-titel: "Athena", serif;
+  --font-script: "Tangerine", cursive;
+}
+
+/* ---------- Reset en basis ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(252, 249, 242);
+}
+h1 {
+  font-family: var(--font-titel);
+  font-weight: 100;
+  font-size: 80px;
+  color: var(--tekst-zacht);
+}
+
+h2,
+h3,
+h4 {
+  font-family: var(--font-titel);
+  font-weight: 700;
+  color: var(--tekst);
+  margin-bottom: 6px;
+}
+
+p {
+  color: var(--tekst);
+  margin: 6px 0;
+}
+
+#sinds {
+  font-family: var(--font-script);
+  font-size: 38px;
+}
+
+.tangerine-regular {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------- Hulpklasse ---------- */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+.in-stock {
+  color: var(--paars);
+}
+
+.out-of-stock {
+  color: var(--goud);
+}
+/* ---------- Hero en header ---------- */
+.hero {
+  position: relative;
+  text-align: center;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.herologo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.herologo img {
+  max-width: 200px;
+  max-height: 190px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.primary-header {
+  background-color: var(--bruin);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.primary-navigation {
+  display: flex;
+  flex-direction: row;
+  --gap: 2em;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.primary-navigation-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  color: var(--goud);
+  font-family: var(--font-titel);
+  font-size: 18px;
+}
+.mobile-nav-toggle {
+  background-color: transparent;
+  border-style: none;
+  margin-right: auto;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 1000;
+}
+.mobile-nav-toggle .bar {
+  z-index: 1000;
+  transform-origin: center;
+  transition:
+    transform 250ms ease,
+    opacity 250ms ease;
+}
+
+/* Als het menu open is: */
+.mobile-nav-toggle[aria-expanded="true"] .bar-top {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .bar-mid {
+  opacity: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .bar-bottom {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+/* @media (max-width: 35rem) {
+  .primary-navigation {
+    --gap: 2em;
+    position: absolute;
+    inset: 60% 0 0 50%;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    background-color: var(--goud);
+  }
+} */
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .primary-navigation-list {
+    position: fixed;
+    inset: 0 0 0 30%; /* schuift in vanaf 30% breedte tot volledig rechts */
+    flex-direction: column;
+    gap: 2rem;
+    padding: min(20vh, 10rem) 2rem;
+    background: var(--creme);
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .primary-navigation-list[data-visible="true"] {
+    transform: translateX(0%);
+  }
+}
+
+.row-banner {
+  background-image: url(Afbeeldingen/banners/bannerBloem.png);
+  background-size: cover;
+  width: 100%;
+  font-size: 8vw;
+}
+/* ---------- collectieknoppen ------*/
+
+/* ---------- Winkelmand ---------- */
+.shoppingbasket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shopdiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-count {
+  display: flex;
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  color: var(--wit);
+  background-color: var(--rood);
+  padding: 4px 9px;
+  border-radius: 40px;
+  justify-content: center;
+}
+
+.countdiv {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-direction: row;
+}
+
+.counterinnerdiv {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btnCountplus,
+.btnCountmin {
+  display: flex;
+  align-items: center;
+  border-style: none;
+  width: 30px;
+  height: 30px;
+  padding: 12px;
+  background-color: rgb(252, 249, 242);
+  color: var(--tekst-zacht);
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(0.1, 0.1, 0.1, 0.1);
+}
+.btnCount:hover {
+  box-shadow: inset 0 2px 4px rgba(0.1, 0.1, 0.1, 0.3);
+}
+.shoppingcontainer {
+  display: flex;
+  min-height: 100%;
+  background-color: var(--creme);
+  align-items: center;
+  justify-content: center;
+}
+
+.shoppingcard {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 500px;
+  height: 600px;
+  background-color: var(--creme);
+  box-shadow: var(--schaduw);
+}
+
+.shoppingcart-overlay {
+  width: 100vw;
+  background-color: var(--licht);
+  text-align: left;
+  padding: 20px 120px;
+  /* box-shadow: var(--schaduw); */
+  font-family: var(--font-titel);
+  color: var(--tekst);
+}
+
+/* ---------- Collectie en kaarten ---------- */
+.collectie {
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 30px;
+}
+.buttonCat-container {
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.buttonCat-container::-webkit-scrollbar {
+  display: none;
+}
+.container-cards {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px;
+}
+
+.product {
+  width: 70%;
+}
+
+.card {
+  flex-direction: column;
+  width: clamp(250px, 30vw, 300px);
+  box-shadow: var(--schaduw);
+  background-color: var(--beige);
+  border-radius: 20px;
+}
+
+.body-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+
+.img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+@media (max-width: 768px) {
+  /* .buttonCat-container {
+    flex-direction: column;
+  } */
+  .container-cards {
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+  }
+}
+/* ---------- Knoppen ---------- */
+.button-container {
+  flex-direction: row;
+}
+
+.btn,
+.bestel,
+.tab {
+  background-color: var(--paars);
+  padding: 10px 20px;
+  color: var(--goud);
+  border-style: none;
+  border-radius: 7px;
+  margin-top: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: box-shadow 0.3s ease;
+}
+.js-verwijder {
+  background-color: var(--bruin);
+  padding: 10px 20px;
+  color: var(--goud);
+  border-style: none;
+  border-radius: 7px;
+  margin-top: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: box-shadow 0.3s ease;
+}
+.btn:hover,
+.bestel:hover,
+.tab:hover {
+  box-shadow: var(--schaduw-hover);
+}
+
+.btn-icon {
+  height: 25px;
+}
+
+.allproducts {
+  border-style: none;
+  font-family: var(--font-titel);
+  font-weight: 700;
+  font-size: 23px;
+  color: var(--tekst);
+  background-color: var(--wit);
+}
+
+/* ---------- Admin ---------- */
+.paneel {
+  padding: 20px;
+}
+.tabnav {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding: 20px 20px 20px 20px;
+  background-color: var(--licht);
+}
+.tabnav h3 {
+  font-family: var(--font-titel);
+  font-weight: 700;
+  color: var(--tekst);
+  margin-right: auto;
+}
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0 30px;
+}
+
+form {
+  background-color: var(--licht);
+  max-width: 40rem;
+  margin: 1rem auto;
+  margin-bottom: 60px;
+  padding: 3rem;
+  font-family: var(--font-titel);
+  color: var(--tekst);
+  border-radius: 10px;
+  box-shadow: var(--schaduw);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  color: var(--tekst);
+  font-family: var(--font-titel);
+  border: 1px solid #c9a84f;
+  border-radius: 4px;
+}
+.row-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.admin-producten > div:first-of-type {
+  align-items: end;
+  justify-content: space-between;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--font-titel);
+  color: var(--tekst);
+  margin-top: 60px;
+}
+td {
+  border-bottom: rgba(0, 0, 0, 0.23) 1px solid;
+  padding: 2rem;
+  text-align: right;
+}
+th {
+  text-align: right;
+  padding: 2rem;
+}
+.admin-product tr:nth-of-type(2n) {
+  background-color: var(--beige);
+}
+.js-totaal {
+  background-color: var(--beige);
+}
+/* ---------- Afbeelding preview ---------- */
+#preview {
+  max-width: 150px; /* De afbeelding wordt nooit breder dan 150 pixels */
+  height: auto; /* Zorgt dat de verhoudingen (breedte/hoogte) netjes kloppen */
+  display: block; /* Handig om hem op een eigen regel te zetten */
+  margin-top: 10px; /* Wat ruimte tussen het invoerveld en het voorbeeld */
+}
+@media (max-width: 820px) {
+  .admin-product th {
+    display: none;
+  }
+  .admin-product td {
+    display: block;
+    text-align: left;
+    border-style: none;
+    padding: 0.9rem;
+  }
+  .admin-product td:first-child {
+    padding-top: 2.4rem;
+  }
+  .admin-product td:nth-child(-n + 5)::before {
+    content: attr(data-label) " : ";
+    font-weight: 700;
+  }
+  .admin-product td:nth-last-child(-n + 2) {
+    display: inline-flex;
+    padding-bottom: 2.4rem;
+  }
+}
